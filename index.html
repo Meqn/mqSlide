@@ -94,7 +94,9 @@ $(function(){
 		s.h = s.li.outerHeight(true);
 		s.pagewrap = $(ele).siblings('.slide-navi');
 		s.picTimer;											// 自动播放
-		s.ul.width(s.w*s.count); 							// 设置slide宽
+		if(s.opt.dire === 'left') {
+			s.ul.width(s.w*s.count); 						// 水平滚动，设置slide宽
+		}
 		// 私有方法
 		// function fn(){}
 		// 公有方法
