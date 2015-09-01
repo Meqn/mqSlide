@@ -13,6 +13,9 @@ body{font:14px/1.5 "微软雅黑"; color:#333;}
 .slidesbox2 .slides{width:300px;}
 
 
+.slidesbox4 .slides{width:300px; position:relative;}
+.slidesbox4 .slides li{width:300px; height:200px; position:absolute; top:0; left:0; display:none;}
+
 
 .slidesbox3{width:300px; position:relative; border:1px solid #666;}
 .slidesbox3 .slides{width:300px; height:400px; overflow:hidden;}

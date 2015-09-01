@@ -48,6 +48,22 @@
 	<div class="slide-navi"></div>
 </div>
 
+<div class="slidesbox slidesbox2 slidesbox4">
+	<div class="slides" id="slides4">
+		<ul>
+			<li>0</li>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>
+	<div class="prev">上一页</div>
+	<div class="next">下一页</div>
+	<div class="slide-navi"></div>
+</div>
+
 
 <div class="slidesbox3">
 	<div class="slides" id="slides3">
@@ -58,6 +74,7 @@
 			<li>3</li>
 			<li>4</li>
 			<li>5</li>
+			<li>6</li>
 		</ul>
 	</div>
 	<div class="prev">上一页</div>
@@ -118,7 +135,7 @@ $(function(){
 			s.pages();
 		}
 		s.Play(s.opt.inx);
-		s.opt.started(s.opt.inx);
+		s.opt.started(s.opt.inx,s.len);
 	}
 	mqs.prototype = {
 		pages 	: function(){
@@ -147,6 +164,9 @@ $(function(){
 					break;
 				case 'up':
 					self.ul.animate({'margin-top':nowTop+'px'}, 300);
+					break;
+				case 'fade':
+					self.li.fadeOut(300).eq(index).fadeIn(300);
 					break;
 				default:
 					self.ul.animate({'margin-left':nowLeft+'px'}, 300);
@@ -188,6 +208,7 @@ $(function(){
 	*/
 	var s1 = new mqs('#slides',{auto:false,ispage:true,num:2,callback:function(a,b){console.log('callback: '+a+' - '+b)},started:function(index){console.log('开始啦')}});
 	var s2 = new mqs('#slides2');
+	var s4 = new mqs('#slides4',{dire:'fade'});
 	var s3 = new mqs('#slides3',{auto:false,dire:'up',num:2});
 
 	$('#btnnextpage').click(function(event) {
